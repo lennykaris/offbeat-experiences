@@ -1,0 +1,91 @@
+/* Home.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fdf9f7;
+}
+
+.home {
+  text-align: center;
+  padding: 2rem;
+  color: #232323;
+}
+
+.home h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home-buttons button {
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-buttons button:first-child {
+  background-color: #5c67f2;
+  color: #fff;
+}
+
+.home-buttons button:first-child:hover {
+  background-color: #4049c6;
+}
+
+.home-buttons button:last-child {
+  background-color: transparent;
+  border: 2px solid #5c67f2;
+  color: #5c67f2;
+}
+
+.home-buttons button:last-child:hover {
+  background-color: #5c67f2;
+  color: #fff;
+}
+
+/* Image Styling */
+.home::before {
+  content: '';
+  background: url('/public/background.png') no-repeat center;
+  background-size: cover;
+  display: block;
+  height: 300px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
