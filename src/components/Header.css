@@ -1,9 +1,12 @@
-/* Header.css */
-body {
+/* Global Reset */
+body, html, ul, li, h1, h2, h3, h4, h5, h6, p, a, button {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
 }
 
 /* Header Styles */
@@ -11,39 +14,42 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #008cff; /* Orange */
-  color: #fff;
   padding: 1rem 2rem;
+  background-color: #0077ff; /* Orange */
+  color: #fff;
   position: static;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
   color: #000; /* Black */
-  text-transform: uppercase;
+  text-transform: italics;
+
+}
+
+/* Navbar List */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-list li {
-  position: relative;
 }
 
 .nav-list a {
   text-decoration: none;
-  font-size: 1rem;
   color: #fff;
   font-weight: bold;
+  font-size: 1rem;
   transition: color 0.3s ease-in-out;
 }
 
@@ -51,18 +57,7 @@ body {
   color: #28a745; /* Green */
 }
 
-.nav-list li:hover::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #28a745; /* Green */
-  animation: slide-in 0.3s ease-in-out;
-}
-
-/* Button Styles */
+/* Schedule Button */
 .schedule-button {
   background-color: #28a745; /* Green */
   color: #fff;
@@ -75,65 +70,67 @@ body {
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
-}
-
-.schedule-button::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #ff7f00; /* Orange */
-  z-index: -1;
-  transition: left 0.3s ease-in-out;
-}
-
-.schedule-button:hover::after {
-  left: 0;
+  border-radius: 25px;
 }
 
 .schedule-button:hover {
+  background-color: #fff;
   color: #000; /* Black */
 }
 
-/* Keyframes for Cool Animations */
-@keyframes slide-in {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+/* Mobile Menu Icon */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
+/* Responsive Design */
+@media (max-width: 1024px) {
   .nav-list {
+    display: none;
     flex-direction: column;
+    background-color: #ff7f00;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
     gap: 1rem;
-    margin-top: 1rem;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   .schedule-button {
-    align-self: flex-start;
-    margin-top: 1rem;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-list a {
+    font-size: 0.9rem;
+  }
+
+  .schedule-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
   }
 }
