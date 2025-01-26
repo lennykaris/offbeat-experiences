@@ -1,14 +1,16 @@
 import React from 'react';
 import './Blog.css';
 
-function Blog() {
+const Blog = () => {
   return (
     <div className="blog">
       <h1>Blog</h1>
-      <p>Read inspiring stories and travel tips from our adventures.</p>
-      {/* Add blog posts or a list of articles here */}
+      <section className="blog-posts">
+        <h2>Recent Posts</h2>
+        <p>Coming soon! Stay tuned for exciting travel stories and tips from our adventures.</p>
+      </section>
     </div>
   );
-}
+};
 
 export default Blog;

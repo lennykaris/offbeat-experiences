@@ -1,14 +1,13 @@
 import React from 'react';
 import './Themes.css';
 
-function Themes() {
+const Theme = () => {
   return (
-    <div className="themes">
-      <h1>Themes</h1>
-      <p>Choose from a variety of themes to customize your next adventure.</p>
-      {/* Add theme cards or descriptions here */}
+    <div className="theme">
+      <h1>Theme</h1>
+      <p>Customize your experience with our theme options. (Work in progress)</p>
     </div>
   );
-}
+};
 
-export default Themes;
+export default Theme;
