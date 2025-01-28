@@ -1,33 +1,72 @@
 import React from 'react';
-import './AboutUs.css';
+import { Link } from 'react-router-dom';
+import './pages.css'; // Separate CSS file for About Us page
 
 const AboutUs = () => {
   return (
     <div className="about-us">
-      <h1>About Offbeat Experiences</h1>
-      <p>
-        Offbeat Experiences is a travel company offering wildlife safaris, educational experiences, and
-        adventure tours. We customize experiences for students, educators, and adventure seekers
-        while ensuring each trip is enriching, unforgettable, and safe.
-      </p>
-
-      <section className="our-mission">
-        <h2>Our Mission</h2>
-        <p>
-          Believing in the power of travel to educate and inspire, we aim to help you explore Kenya's
-          beauty while learning about its rich culture and diverse ecosystems. Join Offbeat Experiences
-          for a journey that connects you deeply with the world.
-        </p>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-image">
+          <div className="hero-text">
+            <h1>About Offbeat Experiences</h1>
+            <p>Discover the story behind our passion for adventure and travel.</p>
+          </div>
+        </div>
       </section>
 
-      <section className="our-services">
-        <h2>Our Services</h2>
-        <ul>
-          <li><strong>Adventure Tourism:</strong> From mountain treks to beach safaris, we offer adventure tours that get hearts racing.</li>
-          <li><strong>Educational Travel Programs:</strong> Tailored for schools, colleges, and educators, blending adventure with learning experiences.</li>
-          <li><strong>Wildlife Safaris:</strong> Explore Kenya by taking the known and less trodden path with guided safari tours around the country.</li>
-          <li><strong>Eco-Friendly Travel:</strong> Focus on sustainable travel that helps sustain and respect nature and local cultures.</li>
-        </ul>
+      {/* Mission and Vision Section */}
+      <section className="mission-vision">
+        <div className="mission">
+          <h2>Our Mission</h2>
+          <p>
+            At Offbeat Experiences, our mission is to create unforgettable travel adventures that inspire
+            exploration, foster cultural understanding, and promote sustainable tourism. We believe in
+            connecting people with nature, wildlife, and diverse cultures to create meaningful experiences.
+          </p>
+        </div>
+        <div className="vision">
+          <h2>Our Vision</h2>
+          <p>
+            We envision a world where travel is not just about visiting new places but about transforming
+            lives. Through our carefully curated experiences, we aim to empower travelers to discover
+            themselves while making a positive impact on the communities and environments they visit.
+          </p>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="team-section">
+        <h2>Meet Our Team</h2>
+        <div className="team-grid">
+          <div className="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member 1" />
+            <h3>John Doe</h3>
+            <p>Founder & CEO</p>
+          </div>
+          <div className="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member 2" />
+            <h3>Jane Smith</h3>
+            <p>Head of Operations</p>
+          </div>
+          <div className="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member 3" />
+            <h3>Mike Johnson</h3>
+            <p>Lead Guide</p>
+          </div>
+          <div className="team-member">
+            <img src="https://via.placeholder.com/150" alt="Team Member 4" />
+            <h3>Sarah Lee</h3>
+            <p>Marketing Manager</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Call-to-Action Section */}
+      <section className="cta-section">
+        <h2>Ready for Your Next Adventure?</h2>
+        <p>Explore our experiences and start planning your journey today.</p>
+        <Link to="/experiences" className="cta-button">Explore Experiences</Link>
       </section>
     </div>
   );

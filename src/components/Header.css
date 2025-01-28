@@ -1,136 +1,125 @@
-/* Global Reset */
-body, html, ul, li, h1, h2, h3, h4, h5, h6, p, a, button {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-}
-
-/* Header Styles */
+/* General Styles */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0077ff; /* Orange */
-  color: #fff;
-  position: static;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  position: -webkit-sticky; /* Add this for Safari compatibility */
+  position: sticky; /* Standard property */
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.header.sticky {
+  background-color: rgba(76, 175, 80, 0.9); /* Semi-transparent green */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: bold;
-  color: #000; /* Black */
-  text-transform: italics;
-
 }
 
-/* Navbar List */
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
+/* Navigation Styles */
 .nav-list {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-list a {
+.nav-list li {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav-list li a, .nav-list li span {
+  color: white;
   text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: color 0.3s ease-in-out;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
+  display: block;
+  transition: color 0.3s ease;
 }
 
-.nav-list a:hover {
-  color: #28a745; /* Green */
+.nav-list li a:hover, .nav-list li span:hover {
+  color: #f1f1f1;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.dropdown-content li {
+  padding: 10px;
+}
+
+.dropdown-content li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+  background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Schedule Button */
 .schedule-button {
-  background-color: #28a745; /* Green */
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.8rem 1.5rem;
+  background-color: #ff5722;
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-  border-radius: 25px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .schedule-button:hover {
-  background-color: #fff;
-  color: #000; /* Black */
-}
-
-/* Mobile Menu Icon */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
+  background-color: #e64a19;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    background-color: #ff7f00;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-    gap: 1rem;
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .schedule-button {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
-  .logo {
-    font-size: 1.5rem;
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .nav-list a {
-    font-size: 0.9rem;
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+  }
+
+  .dropdown-content {
+    position: static;
   }
 
   .schedule-button {
-    font-size: 0.9rem;
-    padding: 0.7rem 1.2rem;
+    width: 100%;
+    margin-top: 10px;
   }
 }

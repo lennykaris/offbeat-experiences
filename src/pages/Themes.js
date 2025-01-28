@@ -1,5 +1,5 @@
 import React from 'react';
-import './Themes.css';
+import './pages.css';
 
 const Theme = () => {
   return (

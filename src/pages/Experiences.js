@@ -1,40 +1,92 @@
 import React from 'react';
-import './Experiences.css';
+import './pages.css'; // Reuse the same CSS file
 
 const Experiences = () => {
   return (
-    <div className="experiences">
-      <h1>Experiences</h1>
-      <section className="experience-list">
-        <h2>White-Water Rafting on the Sagana River</h2>
-        <p>
-          Conquer the rapids! Our Sagana River White-Water Rafting Tour is the ultimate thrill-seeking
-          experience that combines nature's raw power with heart-racing excitement.
-        </p>
+    <div className="home">
+      {/* Hero Section with Image and Text */}
+      <section className="hero-section">
+        <div className="hero-image">
+          <div className="hero-text">
+            <h1>Discover Exciting Experiences!</h1>
+            <p>
+              From adrenaline-pumping adventures to serene cultural tours, we offer experiences that will leave you with unforgettable memories.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <h2>Skydiving in Diani</h2>
-        <p>
-          Take the leap! Imagine soaring through the sky with the wind in your face, your heart racing,
-          and the stunning turquoise waters of the Indian Ocean stretching endlessly below.
-        </p>
+      {/* Featured Experiences Section */}
+      <section className="featured-destinations">
+        <h2>Our Featured Experiences</h2>
+        <div className="destinations-grid">
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="Adrenaline" />
+            <h3>Adrenaline</h3>
+            <p>Get your heart racing with thrilling activities like bungee jumping, zip-lining, and more.</p>
+          </div>
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="Hiking" />
+            <h3>Hiking</h3>
+            <p>Explore Kenya’s stunning landscapes with guided hikes through mountains, forests, and valleys.</p>
+          </div>
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="On the Water" />
+            <h3>On the Water</h3>
+            <p>Enjoy water-based adventures like kayaking, snorkeling, and boat tours.</p>
+          </div>
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="Multiday Tour" />
+            <h3>Multiday Tour</h3>
+            <p>Embark on a multiday adventure across Kenya’s most iconic destinations.</p>
+          </div>
+        </div>
+      </section>
 
-        <h2>Bungee Jumping in Tana River</h2>
-        <p>
-          Take a leap of faith! Bungee jumping over the Tana River in Sagana, Kenya, offers an unparalleled
-          experience that will leave your heart racing and your spirit soaring.
-        </p>
+      {/* Favorite Experiences Section */}
+      <section className="favorite-destinations">
+        <h2>Favorite Experiences</h2>
+        <div className="destinations-grid">
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="Adrenaline" />
+            <h3>Adrenaline</h3>
+            <p>Get your heart racing with thrilling activities like bungee jumping, zip-lining, and more.</p>
+          </div>
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="Hiking" />
+            <h3>Hiking</h3>
+            <p>Explore Kenya’s stunning landscapes with guided hikes through mountains, forests, and valleys.</p>
+          </div>
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="On the Water" />
+            <h3>On the Water</h3>
+            <p>Enjoy water-based adventures like kayaking, snorkeling, and boat tours.</p>
+          </div>
+          <div className="destination-card">
+            <img src="https://via.placeholder.com/300x200" alt="Multiday Tour" />
+            <h3>Multiday Tour</h3>
+            <p>Embark on a multiday adventure across Kenya’s most iconic destinations.</p>
+          </div>
+        </div>
+      </section>
 
-        <h2>Zip Lining in Kereita Forest</h2>
-        <p>
-          Fly through the forest! Zip lining in Kereita Forest offers an experience like no other, with breathtaking
-          views and heart-pounding speeds.
-        </p>
-
-        <h2>Hot Air Balloon Ride Over the Masai Mara</h2>
-        <p>
-          Soar above the wild! A hot air balloon ride over the Masai Mara is an unforgettable thrill, offering
-          breathtaking views of one of the most famous wildlife reserves in the world.
-        </p>
+      {/* Why Book with Offbeat Experiences Section */}
+      <section className="why-book">
+        <h2>Why Book with Offbeat Experiences?</h2>
+        <div className="reasons-grid">
+          <div className="reason-card">
+            <h3>Unforgettable Adventures</h3>
+            <p>We curate unique experiences that you’ll remember for a lifetime.</p>
+          </div>
+          <div className="reason-card">
+            <h3>Expert Guides</h3>
+            <p>Our knowledgeable guides ensure you get the most out of your journey.</p>
+          </div>
+          <div className="reason-card">
+            <h3>Sustainable Travel</h3>
+            <p>We prioritize eco-friendly and culturally respectful travel practices.</p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -1,0 +1,63 @@
+/* About Offbeat Experiences Section */
+.about-offbeat {
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row; /* Change to row to align image and text side by side */
+  align-items: center; /* Vertically center align items */
+  gap: 2rem; /* Space between image and text */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image {
+  flex: 1; /* Allow the image to take up space */
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 1; /* Allow the text to take up space */
+  text-align: left; /* Align text to the left */
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.read-more-button {
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.read-more-button:hover {
+  background-color: #ff4c4c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack image and text on smaller screens */
+  }
+
+  .about-text {
+    text-align: center; /* Center text on smaller screens */
+  }
+}
