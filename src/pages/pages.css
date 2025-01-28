@@ -1,3 +1,129 @@
+/* General Styles */
+.home {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  position: flex;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-image img.active {
+  opacity: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search-bar input,
+.search-bar select,
+.search-bar button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.search-bar button {
+  background-color: #ff6b6b;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #ff4c4c;
+}
+
+/* Featured Destinations Section */
+.featured-destinations {
+  padding: 2rem;
+  text-align: center;
+}
+
+.featured-destinations h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.destination-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.destination-card p {
+  padding: 0 1rem 1rem;
+  color: #666;
+}
+
 /* About Offbeat Experiences Section */
 .about-offbeat {
   padding: 2rem;
@@ -13,18 +139,13 @@
   margin: 0 auto;
 }
 
-.about-image {
-  flex: 1; /* Allow the image to take up space */
-}
-
 .about-image img {
   width: 100%;
-  max-width: 500px; /* Adjust as needed */
+  max-width: 400px; /* Adjust as needed */
   border-radius: 10px;
 }
 
 .about-text {
-  flex: 1; /* Allow the text to take up space */
   text-align: left; /* Align text to the left */
 }
 
@@ -59,5 +180,61 @@
 
   .about-text {
     text-align: center; /* Center text on smaller screens */
+  }
+}
+
+/* Favorite Destinations Section */
+.favorite-destinations {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Why Book Section */
+.why-book {
+  padding: 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reason-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.reason-card p {
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image img {
+    max-width: 100%;
   }
 }
