@@ -1,7 +1,7 @@
 /* General Styles */
 .home {
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #2D2D2D;
   padding: 0;
   margin: 0;
 }
@@ -70,8 +70,8 @@
 }
 
 .search-bar button {
-  background-color: #ff6b6b;
-  color: white;
+  background-color: #F96C29;
+  color: #6DB1BF;
   cursor: pointer;
 }
 

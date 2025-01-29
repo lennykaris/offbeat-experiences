@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // Import useState and useEffect
 import './pages.css'; // Reuse the same CSS file
 
 const Experiences = () => {
@@ -37,7 +37,7 @@ const Experiences = () => {
             onError={(e) => {
               console.error("Error loading image:", e.target.src);
             }}
-            ></img>
+          />
         </div>    
       </section>      
       {/* Featured Experiences Section */}
@@ -60,7 +60,7 @@ const Experiences = () => {
             <p>Enjoy water-based adventures like kayaking, snorkeling, and boat tours.</p>
           </div>
           <div className="destination-card">
-            <img src="multiday.jpg" alt="Multiday Tour" />
+            <img src="/images/multiday.jpg" alt="Multiday Tour" />
             <h3>Multiday Tour</h3>
             <p>Embark on a multiday adventure across Kenya’s most iconic destinations.</p>
           </div>
