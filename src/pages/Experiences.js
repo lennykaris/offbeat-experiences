@@ -2,41 +2,65 @@ import React from 'react';
 import './pages.css'; // Reuse the same CSS file
 
 const Experiences = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of image file names (stored in public/images)
+  const images = [
+    'Nairobi.jpg',
+    'Nakuru.jpg',
+    'Kajiado.jpg',
+    'Mombasa.jpg',
+    'Samburu.jpg',
+    'Nyeri.jpg',
+  ];
+
+  // Automatically cycle through images every 5 seconds
+  useEffect(() => {
+    const nextImage = () => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const interval = setInterval(nextImage, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <div className="home">
-      {/* Hero Section with Image and Text */}
+    <div className="Experiences">
+      {/* Hero Section with Slideshow Background */}
       <section className="hero-section">
         <div className="hero-image">
-          <div className="hero-text">
-            <h1>Discover Exciting Experiences!</h1>
-            <p>
-              From adrenaline-pumping adventures to serene cultural tours, we offer experiences that will leave you with unforgettable memories.
-            </p>
-          </div>
-        </div>
-      </section>
-
+          {/* Use the <img> tag for the slideshow */}
+          <img
+            src={`/images/${images[currentImageIndex]}`}
+            alt={`Slide ${currentImageIndex + 1}`}
+            className="active"
+            onError={(e) => {
+              console.error("Error loading image:", e.target.src);
+            }}
+            ></img>
+        </div>    
+      </section>      
       {/* Featured Experiences Section */}
       <section className="featured-destinations">
         <h2>Our Featured Experiences</h2>
         <div className="destinations-grid">
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Adrenaline" />
+            <img src="/images/adrenaline.jpg" alt="Adrenaline" />
             <h3>Adrenaline</h3>
             <p>Get your heart racing with thrilling activities like bungee jumping, zip-lining, and more.</p>
           </div>
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Hiking" />
+            <img src="/images/hiking.jpg" alt="Hiking" />
             <h3>Hiking</h3>
             <p>Explore Kenya’s stunning landscapes with guided hikes through mountains, forests, and valleys.</p>
           </div>
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="On the Water" />
+            <img src="/images/onthewater.jpg" alt="On the Water" />
             <h3>On the Water</h3>
             <p>Enjoy water-based adventures like kayaking, snorkeling, and boat tours.</p>
           </div>
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Multiday Tour" />
+            <img src="multiday.jpg" alt="Multiday Tour" />
             <h3>Multiday Tour</h3>
             <p>Embark on a multiday adventure across Kenya’s most iconic destinations.</p>
           </div>
@@ -48,22 +72,22 @@ const Experiences = () => {
         <h2>Favorite Experiences</h2>
         <div className="destinations-grid">
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Adrenaline" />
+            <img src="/images/adrenaline.jpg" alt="Adrenaline" />
             <h3>Adrenaline</h3>
             <p>Get your heart racing with thrilling activities like bungee jumping, zip-lining, and more.</p>
           </div>
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Hiking" />
+            <img src="/images/hiking.jpg" alt="Hiking" />
             <h3>Hiking</h3>
             <p>Explore Kenya’s stunning landscapes with guided hikes through mountains, forests, and valleys.</p>
           </div>
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="On the Water" />
+            <img src="/images/onthewater.jpg" alt="On the Water" />
             <h3>On the Water</h3>
             <p>Enjoy water-based adventures like kayaking, snorkeling, and boat tours.</p>
           </div>
           <div className="destination-card">
-            <img src="https://via.placeholder.com/300x200" alt="Multiday Tour" />
+            <img src="/images/multiday.jpg" alt="Multiday Tour" />
             <h3>Multiday Tour</h3>
             <p>Embark on a multiday adventure across Kenya’s most iconic destinations.</p>
           </div>
